@@ -1,0 +1,107 @@
+/*
+ * File: ArrayPriorityQueue
+ */
+package priorityqueue;
+
+import java.util.*;
+import queue.*;
+
+/**
+ * A class that implements a PriorityQueue using an ArrayList
+ * @author Xu, Runbo and Zurn, Andrew
+ * @version 21 Feb, 2011
+ */
+public class ArrayPriorityQueue<T extends Comparable<T>> implements PriorityQueueInterface<T>{
+  /**
+   * the array list to be used as a queue
+   */
+  private ArrayList<T> orderedItems;
+  /**
+   * keeps count of items in the queue
+   */
+  private int count;
+  
+  /**
+   * Constructor for the PriorityQueue
+   */
+  public ArrayPriorityQueue(){
+    orderedItems = new ArrayList<T>();
+    count=0;
+  }
+  
+  /**
+   * method that will return true if the queue is empty, false otherwise
+   * @return boolean true if the queue is empty, false otherwise
+   */
+  public boolean empty() {
+    return (orderedItems.size() == 0);
+  }
+  
+  /**
+   * method that will return the first item in the queue
+   * @return T the first item in the queue
+   * @throw EmptyQueueException will be thrown if the queue is empty
+   */
+  public T peek() throws EmptyQueueException{
+    if(orderedItems.get(0) == null){
+      throw new EmptyQueueException();
+    }
+    else{
+      return (orderedItems.get(0));
+    }
+  }
+  
+  /**
+   * method that will add an item to the queue
+   * @param value the item to be added
+   */
+  public void enqueue(T value){
+    boolean done = false;
+    count=count+1;
+    int i = orderedItems.size()-1;
+    if(orderedItems.size() == 0){
+      orderedItems.add(value);
+    }
+    else{
+      while(!done){
+        if(value.compareTo(orderedItems.get(i)) <0){
+          orderedItems.add(i+1, value);
+          done = true;
+        }
+        else if(value.compareTo(orderedItems.get(i)) == 0){
+          orderedItems.add(i+1, value);
+          done = true;
+        }
+        else if(value.compareTo(orderedItems.get(i)) >0){
+          i--;
+          if(i==-1){
+            orderedItems.add(0, value);
+            done = true;
+          }
+        }
+        
+        }
+      }
+    }
+  
+  /**
+   * method that will return the first item in the queue and move ahead the rest of the queue
+   * @return T the first item in the queue
+   * @throw EmptyQueueException will be thrown if the queue is empty
+   */
+  public T dequeue() throws EmptyQueueException{
+    T result;
+    if(orderedItems.get(0) == null){
+      throw new EmptyQueueException();
+    }
+    else{
+     result=orderedItems.get(0);
+     orderedItems.remove(0);
+      }
+      return result;
+    }
+  
+  public int size(){
+   return  orderedItems.size();
+  }
+}

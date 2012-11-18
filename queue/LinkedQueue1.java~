@@ -1,0 +1,7 @@
+package queue;
+
+public class LinkedQueue1<T> implements SimpleQueue<T> {
+  private ArrayList ls
+  public LinkedQueue1(){
+    ls=new ArrayList(T);
+  }

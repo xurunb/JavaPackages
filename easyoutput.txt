@@ -1,0 +1,16 @@
+This shopper arrived at a time of: 1 with 10 items. 
+This shopper arrived at a time of: 2 with 8 items. 
+This shopper arrived at a time of: 3 with 6 items. 
+This shopper arrived at a time of: 4 with 4 items. 
+This shopper arrived at a time of: 5 with 2 items. 
+This shopper arrived at a time of 1 with 10 items. 
+ The shopper will depart from line 0 at a time of 11 
+This shopper arrived at a time of 2 with 8 items. 
+ The shopper will depart from line 1 at a time of 10 
+This shopper arrived at a time of 3 with 6 items. 
+ The shopper will depart from line 2 at a time of 9 
+This shopper arrived at a time of 4 with 4 items. 
+ The shopper will depart from line 3 at a time of 8 
+This shopper arrived at a time of 5 with 2 items. 
+ The shopper will depart from line 4 at a time of 7 
+7 
